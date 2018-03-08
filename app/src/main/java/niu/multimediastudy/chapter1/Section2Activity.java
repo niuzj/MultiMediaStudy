@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.util.Log;
 
-import niu.multimediastudy.SectionBaseActivity;
+import niu.multimediastudy.base.SectionBaseActivity;
 import niu.multimediastudy.bean.ImageBean;
 
 /**
@@ -62,7 +62,8 @@ public class Section2Activity extends SectionBaseActivity {
                         MediaStore.Images.Media.DESCRIPTION,
                         MediaStore.Images.Media.DATE_ADDED,
                         MediaStore.Images.Media.DATE_TAKEN,
-                        MediaStore.Images.Media.MIME_TYPE}, "mime_type = ?", new String[]{"image/jpeg"}, null);
+                        MediaStore.Images.Media.MIME_TYPE,
+                        MediaStore.Images.Media.ORIENTATION}, "mime_type = ?", new String[]{"image/jpeg"}, null);
                 while (cursor.moveToNext()) {
                     ImageBean imageBean = new ImageBean();
                     imageBean.setDate_added(cursor.getFloat(cursor.getColumnIndex(MediaStore.Images.Media.DATE_ADDED)));
@@ -70,6 +71,7 @@ public class Section2Activity extends SectionBaseActivity {
                     imageBean.setDescription(cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DESCRIPTION)));
                     imageBean.setDisplay_name(cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DISPLAY_NAME)));
                     imageBean.setMime_type(cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.MIME_TYPE)));
+                    imageBean.setOrientation(cursor.getInt(cursor.getColumnIndex(MediaStore.Images.Media.ORIENTATION)));
                     Log.e(TAG, imageBean.toString());
                 }
                 cursor.close();

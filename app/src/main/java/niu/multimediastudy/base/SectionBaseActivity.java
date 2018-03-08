@@ -1,23 +1,19 @@
-package niu.multimediastudy;
+package niu.multimediastudy.base;
 
-import android.content.pm.PackageManager;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 
+import niu.multimediastudy.R;
 import niu.multimediastudy.databinding.ActivitySectionBinding;
 
 /**
  * Created by Qinlian_niu on 2018/3/6.
  */
 
-public abstract class SectionBaseActivity extends AppCompatActivity {
+public abstract class SectionBaseActivity extends BaseActivity {
 
     public ActivitySectionBinding mBinding;
     public String[] listItems = null;
@@ -51,14 +47,5 @@ public abstract class SectionBaseActivity extends AppCompatActivity {
     }
 
     public abstract void onClick(String tag);
-
-    public boolean checkPermission(String permission, int requestCode) {
-        if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{permission}, requestCode);
-            return false;
-        } else {
-            return true;
-        }
-    }
 
 }

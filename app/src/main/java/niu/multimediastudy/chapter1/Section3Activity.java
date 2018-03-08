@@ -21,7 +21,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-import niu.multimediastudy.SectionBaseActivity;
+import niu.multimediastudy.base.SectionBaseActivity;
 import niu.multimediastudy.bean.ExifBean;
 import niu.multimediastudy.bean.ImageBean;
 

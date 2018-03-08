@@ -13,9 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import java.io.File;
-
-import niu.multimediastudy.SectionBaseActivity;
+import niu.multimediastudy.base.SectionBaseActivity;
 import niu.multimediastudy.util.FileUtil;
 
 /**

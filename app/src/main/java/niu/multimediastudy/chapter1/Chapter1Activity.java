@@ -2,7 +2,7 @@ package niu.multimediastudy.chapter1;
 
 import android.content.Intent;
 
-import niu.multimediastudy.ChapterBaseActivity;
+import niu.multimediastudy.base.ChapterBaseActivity;
 
 public class Chapter1Activity extends ChapterBaseActivity {
 

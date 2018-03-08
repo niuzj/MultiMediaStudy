@@ -1,4 +1,4 @@
-package niu.multimediastudy;
+package niu.multimediastudy.base;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
@@ -7,9 +7,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import niu.multimediastudy.R;
 import niu.multimediastudy.databinding.ActivityChapterBinding;
 
-public abstract class ChapterBaseActivity extends AppCompatActivity {
+public abstract class ChapterBaseActivity extends BaseActivity {
 
     public ActivityChapterBinding mBinding;
     public String[] listItems;

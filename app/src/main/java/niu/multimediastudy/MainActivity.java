@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import niu.multimediastudy.chapter1.Chapter1Activity;
+import niu.multimediastudy.chapter2.Chapter2Activity;
 import niu.multimediastudy.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
                 switch (position) {
                     case 0:
                         intent = new Intent(MainActivity.this, Chapter1Activity.class);
+                        break;
+
+                    case 1:
+                        intent = new Intent(MainActivity.this, Chapter2Activity.class);
                         break;
                 }
                 if (intent != null) {

@@ -14,6 +14,7 @@ public class ImageBean {
     private String title;
     private double lat;
     private double lon;
+    private int orientation;
 
     public String getDisplay_name() {
         return display_name;
@@ -87,6 +88,14 @@ public class ImageBean {
         this.lon = lon;
     }
 
+    public int getOrientation() {
+        return orientation;
+    }
+
+    public void setOrientation(int orientation) {
+        this.orientation = orientation;
+    }
+
     @Override
     public String toString() {
         return "ImageBean{" +
@@ -99,6 +108,7 @@ public class ImageBean {
                 ", title='" + title + '\'' +
                 ", lat=" + lat +
                 ", lon=" + lon +
+                ", orientation=" + orientation +
                 '}';
     }
 }
