@@ -13,7 +13,7 @@ import niu.multimediastudy.databinding.ActivityChapterBinding;
 public abstract class ChapterBaseActivity extends BaseActivity {
 
     public ActivityChapterBinding mBinding;
-    public String[] listItems;
+    public String[] listItems = new String[]{};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -43,6 +43,8 @@
         <activity android:name=".chapter3.Section4Activity"/>
         <activity android:name=".chapter3.Section5Activity"/>
 
+        <activity android:name=".chapter4.Chapter4Activity"/>
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="niu.multimediastudy.fileProvider"

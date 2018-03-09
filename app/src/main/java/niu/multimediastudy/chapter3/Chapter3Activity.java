@@ -12,7 +12,7 @@ public class Chapter3Activity extends ChapterBaseActivity {
     @Override
     public void addItems() {
         listItems = new String[]{"使用内置Gallery应用程序选择图像", "在位图上绘制位图",
-                "Matrix", "ColorMatrix", "基本的图像缩放和旋转"};
+                "Matrix", "ColorMatrix", "二图合一"};
     }
 
     @Override

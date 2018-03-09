@@ -12,12 +12,13 @@ import android.widget.ArrayAdapter;
 import niu.multimediastudy.chapter1.Chapter1Activity;
 import niu.multimediastudy.chapter2.Chapter2Activity;
 import niu.multimediastudy.chapter3.Chapter3Activity;
+import niu.multimediastudy.chapter4.Chapter4Activity;
 import niu.multimediastudy.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding mBinding;
-    String[] listItems = new String[]{"Android图像概述", "构建定制的Camera应用程序", "图像编辑与处理"};
+    String[] listItems = new String[]{"Android图像概述", "构建定制的Camera应用程序", "图像编辑与处理", "图形和触摸事件"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
                     case 2:
                         intent = new Intent(MainActivity.this, Chapter3Activity.class);
+                        break;
+
+                    case 3:
+                        intent = new Intent(MainActivity.this, Chapter4Activity.class);
                         break;
                 }
                 if (intent != null) {
