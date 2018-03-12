@@ -13,12 +13,14 @@ import niu.multimediastudy.chapter1.Chapter1Activity;
 import niu.multimediastudy.chapter2.Chapter2Activity;
 import niu.multimediastudy.chapter3.Chapter3Activity;
 import niu.multimediastudy.chapter4.Chapter4Activity;
+import niu.multimediastudy.chapter5.Chapter5Activity;
 import niu.multimediastudy.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding mBinding;
-    String[] listItems = new String[]{"Android图像概述", "构建定制的Camera应用程序", "图像编辑与处理", "图形和触摸事件"};
+    String[] listItems = new String[]{"Android图像概述", "构建定制的Camera应用程序", "图像编辑与处理", "图形和触摸事件",
+            "音频概述"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
 
                     case 3:
                         intent = new Intent(MainActivity.this, Chapter4Activity.class);
+                        break;
+
+                    case 4:
+                        intent = new Intent(MainActivity.this, Chapter5Activity.class);
                         break;
                 }
                 if (intent != null) {
