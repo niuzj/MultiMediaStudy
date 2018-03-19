@@ -25,7 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".chapter1.Chapter1Activity">
         </activity>
         <activity android:name=".chapter1.Section1Activity">
@@ -48,6 +47,13 @@
         <activity android:name=".chapter4.Section2Activity"/>
 
         <activity android:name=".chapter5.Chapter5Activity"/>
+        <activity android:name=".chapter5.Section1Activity"/>
+        <activity android:name=".chapter5.Section2Activity"/>
+
+        <activity android:name=".chapter6.Chapter6Activity"/>
+        <activity android:name=".chapter6.Section1Activity"/>
+        <activity android:name=".chapter6.Section2Activity"/>
+        <activity android:name=".chapter6.Section3Activity"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -59,6 +65,16 @@
                 android:resource="@xml/file_paths"/>
         </provider>
 
+        <service
+            android:name=".chapter5.BgAudioService"
+            android:enabled="true"
+            android:exported="false">
+        </service>
+        <service
+            android:name=".chapter5.BgAudioBindService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
     </application>
 
 </manifest>

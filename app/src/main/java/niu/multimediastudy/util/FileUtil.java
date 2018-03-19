@@ -1,6 +1,7 @@
 package niu.multimediastudy.util;
 
 import android.content.Context;
+import android.content.res.AssetFileDescriptor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -8,6 +9,8 @@ import android.support.v4.content.FileProvider;
 import android.util.Log;
 
 import java.io.File;
+
+import niu.multimediastudy.R;
 
 /**
  * Created by Qinlian_niu on 2018/3/6.
@@ -22,13 +25,29 @@ public class FileUtil {
         return Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + ROOT_PATH + File.separator + fileName;
     }
 
-    public Uri getUri(String fileName, Context context) {
-        String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + ROOT_PATH;
-        File dir = new File(dirPath);
-        if (!dir.exists()) {
-            dir.mkdirs();
+    /**
+     * 获取根目录
+     *
+     * @return
+     */
+    public String getRootPath() {
+        String rootPath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + ROOT_PATH + File.separator;
+        File file = new File(rootPath);
+        if (!file.exists()) {
+            file.mkdirs();
         }
-        String filePath = dirPath + File.separator + fileName;
+        return rootPath;
+    }
+
+    /**
+     * 获取路径的Uri，在N以上，权限更紧了
+     *
+     * @param fileName
+     * @param context
+     * @return
+     */
+    public Uri getUri(String fileName, Context context) {
+        String filePath = getRootPath() + fileName;
         File file = new File(filePath);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             return FileProvider.getUriForFile(context, "niu.multimediastudy.fileProvider", file);
@@ -36,4 +55,17 @@ public class FileUtil {
             return Uri.fromFile(file);
         }
     }
+
+    /**
+     * 获取raw文件夹下的Uri
+     *
+     * @param resId
+     * @param context
+     * @return
+     */
+    public Uri getUriFromRaw(int resId, Context context) {
+        return Uri.parse("android.resource://" + context.getPackageName() + "/" + resId);
+    }
+
+
 }
