@@ -67,5 +67,16 @@ public class FileUtil {
         return Uri.parse("android.resource://" + context.getPackageName() + "/" + resId);
     }
 
+    public void printFile() {
+        String rootPath = getRootPath();
+        File file = new File(rootPath);
+        String[] list = file.list();
+        if (list.length > 0) {
+            for (String s : list) {
+                Log.e(TAG, s);
+            }
+        }
+    }
+
 
 }

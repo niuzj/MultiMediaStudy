@@ -9,19 +9,23 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import java.io.File;
+
 import niu.multimediastudy.chapter1.Chapter1Activity;
 import niu.multimediastudy.chapter2.Chapter2Activity;
 import niu.multimediastudy.chapter3.Chapter3Activity;
 import niu.multimediastudy.chapter4.Chapter4Activity;
 import niu.multimediastudy.chapter5.Chapter5Activity;
 import niu.multimediastudy.chapter6.Chapter6Activity;
+import niu.multimediastudy.chapter7.Chapter7Activity;
 import niu.multimediastudy.databinding.ActivityMainBinding;
+import niu.multimediastudy.util.FileUtil;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding mBinding;
-    String[] listItems = new String[]{"Android图像概述", "构建定制的Camera应用程序", "图像编辑与处理", "图形和触摸事件",
-            "音频概述", "音频捕获"};
+    String[] listItems = new String[]{"1、Android图像概述", "2、构建定制的Camera应用程序", "3、图像编辑与处理", "4、图形和触摸事件",
+            "5、音频概述", "6、音频捕获", "7、音频合成与分析", "临时功能"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,15 @@ public class MainActivity extends AppCompatActivity {
 
                     case 5:
                         intent = new Intent(MainActivity.this, Chapter6Activity.class);
+                        break;
+
+                    case 6:
+                        intent = new Intent(MainActivity.this, Chapter7Activity.class);
+                        break;
+
+                    case 7:
+                        FileUtil fileUtil = new FileUtil();
+                        fileUtil.printFile();
                         break;
                 }
                 if (intent != null) {
